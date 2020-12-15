@@ -10,6 +10,8 @@ Link: https://arxiv.org/abs/2004.07790
 
 This code was based on the hypothesis-only-NLI code provided by Adam Poliak: https://github.com/azpoliak/hypothesis-only-NLI
 
+Contact: j.stacey20@imperial.ac.uk
+
 ## Requirements
 
 All code in the repo relies on pytho2.7. Running pip install -r requirements.txt from the root of the project will install the required python packages.
