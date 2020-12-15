@@ -311,16 +311,16 @@ def trainepoch(epoch):
                         total_norm += p.grad.data.norm() ** 2
             total_norm = np.sqrt(total_norm)
 
-          if total_norm > params.max_norm:
-              shrink_factor = params.max_norm / total_norm
-          current_lr = optimizer.param_groups[0]['lr'] # current lr (no external "lr", for adam)
+            if total_norm > params.max_norm:
+                shrink_factor = params.max_norm / total_norm
+            current_lr = optimizer.param_groups[0]['lr'] # current lr (no external "lr", for adam)
 
-          bias_optimizers[i].param_groups[0]['lr'] = current_lr * shrink_factor # just for update
+            bias_optimizers[i].param_groups[0]['lr'] = current_lr * shrink_factor # just for update
 
-          # Optimizer step
-          bias_optimizers[i].step()
+            # Optimizer step
+            bias_optimizers[i].step()
  
-          bias_optimizers[i].param_groups[0]['lr'] = current_lr
+            bias_optimizers[i].param_groups[0]['lr'] = current_lr
 
         # Backwards for the encoder
         
